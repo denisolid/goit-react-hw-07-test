@@ -17,9 +17,13 @@ const ContactList = () => {
   );
   return (
     <ul className={styles.list}>
-      {filteredData.map((contact) => (
-        <Contact key={contact.id} contact={contact} />
-      ))}
+      {filteredData.length ? (
+        filteredData.map((contact) => (
+          <Contact key={contact.id} contact={contact} />
+        ))
+      ) : (
+        <h2>No contacts...Add first contact!</h2>
+      )}
     </ul>
   );
 };
